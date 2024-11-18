@@ -9,7 +9,7 @@ export default function Card({ task }: { task: Task }) {
     description,
     taskCategory,
     members,
-    numberOfMembers,
+  
     priorityTaskTitle,
     projectName,
     priority,
@@ -58,27 +58,12 @@ export default function Card({ task }: { task: Task }) {
       <p className="text-md font-medium text-gray-700">{description}</p>
 
       {/* Avatar Group */}
-      <div className="avatar-group -space-x-6 rtl:space-x-reverse">
-        {members.map((member) => (
-          <div
-            key={member.id}
-            style={{ backgroundColor: generateRandomColor({ name: member.name }) }}
-            className="avatar"
-          >
-         <div className="py-auto w-8 h-8 flex items-center justify-center rounded-full">
-  <span className="text-sm font-bold text-white text-center flex items-center justify-center">
-    {generateInitials({ name: member.name })}
-  </span>
-</div>
-
-          </div>
-        ))}
-      </div>
+     
 
       {/* Buttons for Priority and Deadline */}
       <div className="flex gap-3 mt-4">
         <button className={`py-1 px-3 text-sm ${priority==PRIORITY.HIGH?'bg-red-300':
-          priority===PRIORITY.LOW?'bg-blue-400':priority==PRIORITY.MEDIUM?'bg-orange-300':'bg-gray-400'
+          priority===PRIORITY.LOW?'bg-blue-300':priority==PRIORITY.MEDIUM?'bg-orange-300':'bg-gray-400'
         } text-white rounded`}>
           {priority}
         </button>
